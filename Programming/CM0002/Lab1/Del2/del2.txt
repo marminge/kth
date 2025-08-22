@@ -1,0 +1,21 @@
+function colourRandom() {
+  var num = Math.floor(Math.random() * 0x1000000);
+  return '#' + ('00000' + num.toString(16)).substr(-6);
+}
+
+function draw_a_flower() {
+    for (var count3 = 0; count3 < 6; count3++) {
+        penColour(colourRandom());
+    for (var count2 = 0; count2 < 8; count2++) {
+            moveForward(20);
+      turnRight(30);
+    }
+    turnRight(60);
+  }
+}
+
+for (var count = 0; count < 3; count++) {
+    draw_a_flower();
+  jumpForward(150);
+}
+
