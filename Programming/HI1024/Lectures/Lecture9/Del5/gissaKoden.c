@@ -10,7 +10,7 @@ void printArray(int *arr, int iter) {
     printf("\n");
 }
 
-int *reverseArray(int *arr, int iter) {
+void reverseArray(int *arr, int iter) {
     for (int i = 0; i < iter / 2; i++) {
         int temp = arr[i];
         arr[i] = arr[iter - 1 - i];
@@ -56,13 +56,13 @@ bool compareCode(const int *compArr, const int *userArr, int iter) {
     return true;
 }
 
-int main(void) {
-    bool run = true;
+int gameLoop() {
     for (int i = 2; i < 6; i++) {
-        run = true;
+        bool run = true;
         int *compCode = generateCompCode(i);
         // Används för att fuska!
         // printArray(compCode, i);
+
         while (run) {
             printf("Gissa koden\n");
 
@@ -88,7 +88,11 @@ int main(void) {
                 free(userCode);
             }
         }
+        free(compCode);
     }
+}
 
+int main(void) {
+    gameLoop();
     return 0;
 }
