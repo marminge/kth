@@ -1,61 +1,58 @@
 #include <stdio.h>
-#include <string.h>
-#include <stdlib.h>
 #define WORDLENGTH 20
 #define MAX 20
 
-void addWord(char sve[][WORDLENGTH+1], char eng[][WORDLENGTH+1], int *nrOfWords) {
-        for(int i = *nrOfWords; i < MAX; i++) {
-            printf("Svenska: ");
-            scanf("%s%*c", sve[*nrOfWords]);
-            if(sve[*nrOfWords] == NULL){
-                sve[i][WORDLENGTH+1] = '\0';
-                break;
-            }
-            printf("Engelska: ");
-            scanf("%s%*c",eng[*nrOfWords]);
-            *nrOfWords++;
+void addWord(char sve[][WORDLENGTH + 1], char eng[][WORDLENGTH + 1], int *nrOfWords) {
+    printf("Skriv in orden som du vill lägga till.\n");
+    printf("Gå tillbaka till menyn genom att ange 'q' för det svenska ordet.\n");
+    for (int i = *nrOfWords; i < MAX; i++) {
+        printf("Svenska: ");
+        scanf("%s%*c", sve[*nrOfWords]);
+        if (sve[*nrOfWords][0] == 'q') {
+            sve[*nrOfWords][0] = '\000';
+            break;
         }
-}
-
-void removeAllWords(char sve[][WORDLENGTH+1], char eng[][WORDLENGTH+1], int *nrOfWords) {
-    if(sve[0] != NULL) {
-        for(int i = 0; sve[i] != NULL; i++)
-            for(int j = 0; sve[j] != NULL; j++){
-                sve[i][*nrOfWords] = '\0';
-                eng[i][*nrOfWords] = '\0';
-            }
+        printf("Engelska: ");
+        scanf("%s%*c", eng[*nrOfWords]);
+        *nrOfWords += 1;
     }
 }
 
-void printWords(char sve[][WORDLENGTH+1], char eng[][WORDLENGTH+1], int *nrOfWords) {
-    if(sve[0][*nrOfWords] != '\0') {
-        for(int i = 0; sve[i] != NULL; i++)
+void removeAllWords(char sve[][WORDLENGTH + 1], char eng[][WORDLENGTH + 1], int *nrOfWords) {
+    if (*nrOfWords != 0) {
+        for (int i = 0; i < *nrOfWords; i++) {
+            sve[i][0] = '\000';
+            eng[i][0] = '\000';
+            *nrOfWords = 0;
+        }
+        printf("Listan är nu tom.\n");
+    } else
+        printf("Gloslistan är redan tom\n");
+}
+
+void printWords(char sve[][WORDLENGTH + 1], char eng[][WORDLENGTH + 1], int *nrOfWords) {
+    if (*nrOfWords != 0) {
+        for (int i = 0; i < *nrOfWords; i++)
             printf("%s - %s\n", sve[i], eng[i]);
-    }
-    else
-        printf("Gloslistan är tom");
-    printf("\n");
+    } else
+        printf("Gloslistan är tom\n");
 }
 
 int meny() {
-    int val = 3;
-    while(val < 1 || val > 4) {
-        val = 1;
-        printf("(1) Skriv in (2) Skriv ut (3) Radera (4) Avsluta: ");
-        scanf("%d", &val);
-    }
+    int val;
+    printf("(1) Skriv in (2) Skriv ut (3) Radera (4) Avsluta: ");
+    scanf("%d", &val);
     return val;
 }
 
 int main(void) {
-    char glosorSve[MAX][WORDLENGTH+1];
-    char glosorEng[MAX][WORDLENGTH+1];
+    char glosorSve[MAX][WORDLENGTH + 1] = {0};
+    char glosorEng[MAX][WORDLENGTH + 1] = {0};
     int nrOfWords = 0, menyval = 0;
 
-    while(menyval != 4) {
+    while (menyval != 4) {
         menyval = meny();
-        switch(menyval) {
+        switch (menyval) {
             case 1:
                 addWord(glosorSve, glosorEng, &nrOfWords);
                 break;
@@ -69,7 +66,7 @@ int main(void) {
                 printf("Avslutar\n");
                 break;
             default:
-                exit(1);
+                printf("Ogiltigt val.\n");
         }
     }
     return 0;
