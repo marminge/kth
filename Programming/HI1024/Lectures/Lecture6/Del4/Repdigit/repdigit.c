@@ -31,7 +31,11 @@ int main(void) {
             printf("%d ", numbers[i]);
         }
     }
-    if (numbersRepeated == 0) printf("No digits were repeated.\n");
+    
+    if (numbersRepeated == 0) 
+        printf("No digits were repeated.\n");
+    else
+        printf("\n");
 
     return 0;
 }

@@ -25,19 +25,19 @@ int main(void) {
             s = "torsdag";
             break;
         case 5:
-            s = "tisdag";
+            s = "fredag";
             break;
         case 6:
-            s = "onsdag";
+            s = "lördag";
             break;
         case 7:
-            s = "torsdag";
+            s = "söndag";
             break;
         default:
             printf("Något gick fel.");
     }
 
-    printf("Om %d dagar är det %s.", antaldagar, s);
+    printf("Om %d dagar är det %s.\n", antaldagar, s);
 
     return 0;
 }

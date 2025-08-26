@@ -5,11 +5,13 @@
 #define CODE_LENGTH 3
 
 // Används för att fuska.
+/*
 void skrivKod(int arr[]) {
     for (int j = 0; j < CODE_LENGTH; j++)
         printf("%d ", arr[j]);
     printf("\n");
 }
+*/
 
 int compareArray(int arrComp[], int arrUser[]) {
     int correctAnsers = 0;

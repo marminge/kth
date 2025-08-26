@@ -11,7 +11,7 @@ int main(void) {
         userInput = userInput / 10;
     }
 
-    printf("Siffersumman är %d.", siffersumma);
+    printf("Siffersumman är %d.\n", siffersumma);
 
     return 0;
 }

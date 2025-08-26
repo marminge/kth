@@ -15,7 +15,7 @@ int main(void) {
     for (int i = 0; i < 10; i++)
         if (numbers[i] == 8) eights++;
 
-    printf("Det finns %dst 8:or.", eights);
+    printf("Det finns %dst 8:or.\n", eights);
 
     return 0;
 }

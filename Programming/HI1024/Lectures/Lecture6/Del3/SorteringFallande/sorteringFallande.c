@@ -5,7 +5,7 @@
 
 int main(void) {
     srand(time(NULL));
-    int numbers[20];
+    int numbers[LENGTH];
 
     for (int i = 0; i < LENGTH; i++) numbers[i] = rand() % 50;
 
@@ -19,7 +19,7 @@ int main(void) {
         }
     }
 
-    for (int i = 0; i < 20; i++) (i < 19) ? printf("%d ", numbers[i]) : printf("%d", numbers[i]);
+    for (int i = 0; i < 20; i++) (i < 19) ? printf("%d ", numbers[i]) : printf("%d\n", numbers[i]);
 
     return 0;
 }

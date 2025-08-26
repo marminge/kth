@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 void fakultetFunction(int n) {
-    printf("%d\n", n);
+    printf("Värdet på n: %d\n", n);
 
     if(n >= 1){
         unsigned long long fakulteten = 1;
@@ -12,7 +12,7 @@ void fakultetFunction(int n) {
 }
 
 int main(void) {
-    fakultetFunction(22);
+    fakultetFunction(7);
 
     return 0;
 }

@@ -12,15 +12,18 @@ void rollDice(int n) {
         diceFreq[rand() % 6]++;
     printf("Värde\t\tFrekvens\n--------------------\n");
     for (int i = 0; i < DICE_SIDES; i++)
-        printf("%d\t\t\t%d\n", i+1, diceFreq[i]);
+        printf("%d\t\t%d\n", i+1, diceFreq[i]);
 }
 
-int main(void) {
+int getN(void) {
     int n;
     printf("Hur många tärningskast vill du göra? ");
     scanf("%d", &n);
+    return n;
+}
 
-    rollDice(n);
+int main(void) {
+    rollDice(getN());
 
     return 0;
 }

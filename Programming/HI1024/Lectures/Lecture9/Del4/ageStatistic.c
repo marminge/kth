@@ -80,6 +80,7 @@ void printTypical(int arr[], int max) {
             occ = 0;
         }
     }
+    printf("\n");
 }
 
 void run() {

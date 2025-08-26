@@ -4,7 +4,7 @@
 
 void printArray(int arr[], int n) {
     for (int i = 0; i < n; i++)
-        (i == n - 1) ? printf("%d", arr[i]) : printf("%d, ", arr[i]);
+        (i == n - 1) ? printf("%d\n", arr[i]) : printf("%d, ", arr[i]);
 }
 
 int getMax() {

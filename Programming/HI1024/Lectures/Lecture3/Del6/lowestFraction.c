@@ -12,6 +12,6 @@ int main() {
         n = remainder;
     }
 
-    printf("In lowest terms: %d/%d", nCopy / m, mCopy / m);
+    printf("In lowest terms: %d/%d\n", nCopy / m, mCopy / m);
     return 0;
 }

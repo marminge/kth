@@ -20,10 +20,11 @@ int main(void) {
     for (int i = 0; i < numberLength; i++)
         table[numbers[i]]++;
 
-    printf("Digit:\t\t\t");
+    printf("Digit:\t\t");
     for (int i = 0; i < TABLE_SIZE; i++) printf("%3d", i);
     printf("\nOccurrences:\t");
     for (int i = 0; i < TABLE_SIZE; i++) printf("%3d", table[i]);
 
+    printf("\n");
     return 0;
 }

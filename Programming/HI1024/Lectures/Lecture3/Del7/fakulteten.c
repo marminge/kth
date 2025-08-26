@@ -10,7 +10,7 @@ int main() {
 
         size_t fakulteten = 1;  //Upp till 22!
 
-        if(scanf("%d", &userInput) == 0) {  // Kontrollerar om input är "valid" (int)
+        if(scanf("%d", &userInput) == 0) {    // Scanf retunerar 0 om den får fel input.
             while (getchar() == '\n');        // Rensar buffert av input. Läser av
             continue;                         // buffert från vänser till slut (\n)
         }

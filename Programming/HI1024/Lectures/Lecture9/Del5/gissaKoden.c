@@ -1,13 +1,11 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
-#include <math.h>
 #include <stdbool.h>
 
 void printArray(int *arr, int iter) {
     for (int i = 0; i < iter; i++)
         printf("%d", arr[i]);
-    printf("\n");
 }
 
 void reverseArray(int *arr, int iter) {
@@ -60,14 +58,15 @@ int gameLoop() {
     for (int i = 2; i < 6; i++) {
         bool run = true;
         int *compCode = generateCompCode(i);
+        
         // Används för att fuska!
         // printArray(compCode, i);
+        // printf("\n");
 
         while (run) {
-            printf("Gissa koden\n");
-
-            int *userCode = generateUserCode(i);
-
+            printf("Gissa koden (%d siffror)\n", i);
+            int *userCode;
+            
             for (int j = 0; j < i; j++) {
                 if (compareNum(userCode[j], compCode[j])) {
                     printf("%d", compCode[j]);
@@ -75,10 +74,7 @@ int gameLoop() {
                     printf("*");
             }
             printf(": ");
-            for (int j = 0; j < i; j++) {
-                printf("%d", userCode[j]);
-            }
-            printf("\n");
+            userCode = generateUserCode(i);
 
             if (compareCode(compCode, userCode, i)) {
                 for (int j = 0; j < i; j++)

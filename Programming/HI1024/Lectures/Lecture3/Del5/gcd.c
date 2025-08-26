@@ -10,6 +10,6 @@ int main() {
         m = n;
         n = remainder;
     }
-    printf("%d is the GCD", m);
+    printf("%d is the GCD\n", m);
     return 0;
 }

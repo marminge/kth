@@ -3,12 +3,12 @@
 int main(void) {
     int userInput, inputReversed;
 
-    printf("Ange ett tal: ");
+    printf("Ange ett två-siffrigt tal: ");
     scanf("%d",&userInput);
 
     inputReversed = userInput % 10 * 10 + userInput / 10;
 
-    printf("%d", inputReversed);
+    printf("%d\n", inputReversed);
 
     return 0;
 }

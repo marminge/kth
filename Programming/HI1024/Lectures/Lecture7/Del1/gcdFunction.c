@@ -15,6 +15,6 @@ int main() {
     scanf("%d %d", &n, &m);
 
 
-    printf("%d is the GCD", gcd(n, m));
+    printf("%d is the GCD\n", gcd(n, m));
     return 0;
 }

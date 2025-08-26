@@ -5,10 +5,8 @@ int main() {
     const float grundpris = 9.9;
     double totalpris = 0;
 
-    char meny[] = "Vill du göra ett köp[1] eller avsluta[2]? ";
-
     while (1) {
-        printf("%s", meny);
+        printf("Vill du göra ett köp[1] eller avsluta[2]? ");
         int val;
         scanf("%d", &val);
 
@@ -25,14 +23,14 @@ int main() {
                 else
                     totalpris = antalSkivor * grundpris;
 
-                printf("Totalpriset för %dst skivor är %.2fkr.\n", antalSkivor, totalpris);
+                printf("Totalpriset för %dst skivor är %.2fkr.\n\n", antalSkivor, totalpris);
                 break;
             case 2:
-                printf("Avslutar..");
+                printf("Avslutar..\n");
                 exit(0);
             default:
-                printf("Ogiltigt val.\n");
+                printf("Ogiltigt val.\n\n");
         }
     }
-    return 0; // Gör ingenting eftersom att jag avslutar med exit(0)
+    return 0;
 }

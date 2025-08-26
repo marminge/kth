@@ -15,7 +15,7 @@ int main(void){
     else
         totalpris = antalSkivor * grundpris;
 
-    printf("Totalpriset för %dst skivor är %.2fkr.", antalSkivor, totalpris);
+    printf("Totalpriset för %dst skivor är %.2fkr.\n", antalSkivor, totalpris);
 
     return 0;
 }
