@@ -1,8 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#define WORDLENGTH 50
-#define MAX 100
+#define WORDLENGTH 100
 
 typedef struct car {
   char model[WORDLENGTH];
