@@ -10,17 +10,17 @@ int main(void) {
     scanf("%d", &dollarAmount);
 
     if (dollarAmount >= 20) {
-        int remain = floor(dollarAmount / 20);
+        int remain = (dollarAmount / 20);
         twenty = remain;
         dollarAmount -= remain * 20;
     }
     if (dollarAmount >= 10) {
-        int remain = floor(dollarAmount / 10);
+        int remain = (dollarAmount / 10);
         ten = remain;
         dollarAmount -= remain * 10;
     }
     if (dollarAmount >= 5) {
-        int remain = floor(dollarAmount / 5);
+        int remain = (dollarAmount / 5);
         five = remain;
         dollarAmount -= remain * 5;
     }
