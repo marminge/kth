@@ -9,14 +9,13 @@ int main(void) {
   printf("Lunar decent challenge!\n");
   printf("Set the throttle for each second (0-100).\n");
   printf("Time(s) Height(m) Velocity(m/s) Fuel(kg)\tThrottle?\n");
-  do {
+  while (height > 0) {
     if (fuel > 0) {
       printf("%3d%11.1f%10.1f%13d\t\t", seconds, height, velocity, fuel);
       // Scanf retunerar 0 om den får fel input
       // getchar() == '\n' rensar strömmen till radbyte
       if (scanf("%d", &throttle) == 0) {
-        while (getchar() == '\n')
-          ;
+        while (getchar() == '\n') {};
         continue;
       }
     } else {
@@ -39,7 +38,7 @@ int main(void) {
       printf("Throttle 0-100!\n");
       continue;
     }
-  } while (height > 0);
+  };
 
   (velocity > -2)
       ? printf("\nSuccess! You landed at a speed of %.1f m/s\n", velocity)
