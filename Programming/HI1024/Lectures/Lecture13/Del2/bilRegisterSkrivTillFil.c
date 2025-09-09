@@ -11,6 +11,50 @@ typedef struct car {
 
 typedef enum menu { REGISTER = 1, PRINTALL, INCREASEMILAGE, END } Menu;
 
+void skrivTillFil(char s[], int year, int milage);
+
+void skrivUtFrånFil();
+
+void uppdateraFil(Car reg[], int nrOfCars);
+
+Car createCar(char model[], int year, int milage);
+
+void uppdateraArray(Car reg[], int *nrOfCars);
+
+void regCars(Car reg[], int *nrOfCars);
+
+void increaseMilage(Car reg[]);
+
+int menuChoice();
+
+int main(void) {
+  Car carRegister[WORDLENGTH];
+  int nrOfCars = 0;
+  Menu menu;
+  uppdateraArray(carRegister, &nrOfCars);
+  while (1) {
+    menu = menuChoice();
+    switch (menu) {
+    case 1:
+      regCars(carRegister, &nrOfCars);
+      break;
+    case 2:
+      skrivUtFrånFil();
+      break;
+    case 3:
+      increaseMilage(carRegister);
+      uppdateraFil(carRegister, nrOfCars);
+      break;
+    case 4:
+      printf("Avslutar.\n");
+      exit(1);
+    default:
+      printf("Ogiltigt val.");
+    };
+  }
+  return 0;
+}
+
 void skrivTillFil(char s[], int year, int milage) {
   FILE *fp = fopen("bilregister.txt", "a");
   if (fp != NULL) {
@@ -110,32 +154,4 @@ int menuChoice() {
   scanf("%d", &val);
   printf("\n");
   return val;
-}
-
-int main(void) {
-  Car carRegister[WORDLENGTH];
-  int nrOfCars = 0;
-  Menu menu;
-  uppdateraArray(carRegister, &nrOfCars);
-  while (1) {
-    menu = menuChoice();
-    switch (menu) {
-    case 1:
-      regCars(carRegister, &nrOfCars);
-      break;
-    case 2:
-      skrivUtFrånFil();
-      break;
-    case 3:
-      increaseMilage(carRegister);
-      uppdateraFil(carRegister, nrOfCars);
-      break;
-    case 4:
-      printf("Avslutar.\n");
-      exit(1);
-    default:
-      printf("Ogiltigt val.");
-    };
-  }
-  return 0;
 }
