@@ -2,15 +2,20 @@
 #include <stdlib.h>
 
 int main(void) {
-  char *s = " ";
+  char *s;
   int veckodag, antaldagar;
 
   printf("Vilken dag är det idag (1-mån, 2-tid, ..., 7-sön: ");
-  scanf("%d%*c", &veckodag);
+  scanf("%d", &veckodag);
   printf("Ange antal dagar: ");
-  scanf("%d%*c", &antaldagar);
+  scanf("%d", &antaldagar);
 
-  int dagensDag = ((antaldagar % 7) + veckodag) % 7;
+  int dagensDag = (veckodag + antaldagar) % 7;
+
+
+  if (dagensDag == 0)
+    dagensDag = 7;
+  
 
   switch (dagensDag) {
   case 1:
@@ -35,7 +40,7 @@ int main(void) {
     s = "söndag";
     break;
   default:
-    printf("Något gick fel.");
+    printf("Något gick fel.\n");
     exit(0);
   }
 

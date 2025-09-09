@@ -10,11 +10,11 @@ int main(void) {
     }    
 
     for (int i = 0; i < 4; i++) {
-        for (int j = 0; j < 4-1; j++) {
+        for (int j = i; j < 4-1; j++) {
             if (numbers[j] > numbers[j + 1]) {
                 int temp = numbers[j];
                 numbers[j] = numbers[j + 1];
-                numbers[j + 1   ] = temp;
+                numbers[j + 1] = temp;
             }
         }
     }
