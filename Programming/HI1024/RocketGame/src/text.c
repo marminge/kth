@@ -36,8 +36,8 @@ void updateText(Text *pText, int status, int height, float throttle,
                 float velocity) {
   switch (status) {
   case 1:
-    sprintf(pText->texten, "Height: %d Throttle: %.1f Velocity: %.1f", height,
-            throttle, velocity);
+    sprintf(pText->texten, "Height: %d Throttle: %.1f Velocity: %.1f",
+            -(height - 720), throttle, velocity);
     break;
   case 2:
     sprintf(pText->texten, "You successfully landed with a velocity of %.1f",
